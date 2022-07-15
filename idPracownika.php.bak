@@ -1,0 +1,84 @@
+<?php
+
+	session_start(); // dzięki temu podstrona może korzystać ze zmiennych globalnych
+	
+	if(!isset($_SESSION['zalogowany']))	//by uniknąć że ktoś niezalogowany wpisze kod w adresie i przejdzie na tą stronę
+	{
+		header('Location: index.php');
+		exit();			// w takim przypadku przenieś na str main (zalogowaną) i pomiń poniższy kod (z tej str index)
+	}else
+	{
+	
+	
+	
+		//Poniżej - przetważanie naszego formularza:
+		if(isset($_POST['edytujPracownika'])){
+					$id_pracownika=$_POST['inputIdPracownika'];
+					$_SESSION['id_pracownika']=$id_pracownika;
+					header('Location: edytujPracownika.php');
+				};
+	}
+	
+	?>
+
+<!DOCTYPE HTML>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale-=1">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <title>Aplikacja do zarządzania ludźmi - pracownicy</title>
+	</head>
+<body>
+    <div class="container">
+		<div class="navbar">
+			<nav> 
+			<a href="zastepstwa.php">ZASTĘPSTWA</a>
+			<a href="pracownicy.php">PRACOWNICY</a>
+			<a href="historiaZastepst.php">HISTORIA ZASTĘPST</a>					
+			</nav
+		</div>
+		
+		
+		<div class=box1>
+			
+		   <form method="post">
+				<br>
+		   
+				<?php
+				if(isset($error_brakNameLubSurname))
+				{
+					echo '<div class="error">'.$error_brakNameLubSurname.'</div>';
+					unset($error_brakNameLubSurname);			//usuwam błąd, by po spełnieniu warunku nadal się nie pokazywał
+				}
+				?>
+				
+				<br> imię:
+				<br><input type="text" name="pr_name">
+				<br> nazwisko:
+				<br><input type="text" name="pr_surname">
+				<br> rodzaj umowy:
+				<br><input type="text" name="umowa">
+				<br> okres umowy:
+				<br><input type="date" name="umowa_data">
+				<br> okres badań lekarskich: 
+				<br><input type="date" name="lekarskie_data">
+				<br> domyślna budowa:
+				<br><input type="text" name="budowa">
+				<br> stawska:
+				<br><input type="number" name="stawka">
+				
+				<br><br> <input type="submit" value="dodaj" onclick=" function dodanoPracownika()">
+		   </form>
+	   
+	   </div>
+
+   
+    </div>
+    
+   <!-- <script src="js/script1.js"></script> -->
+    </body>
+
+
+</html>

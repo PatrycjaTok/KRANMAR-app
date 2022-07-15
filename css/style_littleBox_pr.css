@@ -1,0 +1,115 @@
+@media screen and (max-width:640px){   
+    body{
+        font-size: 18px;
+    }  
+    
+}
+
+@media screen and (min-width:640px) and (max-width:1024px){
+    body{
+        font-size: 20px;
+    }
+    
+}
+
+@media screen and (min-width:1024px){
+body{
+    font-size: 20px;
+    }
+    
+}
+
+
+body{
+    width: auto;
+    background-color: rgb(196, 189, 189);
+    font-family: georgia,tahoma, arial, sans-serif;
+    margin:0;
+}
+
+.container{
+    width:auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+}
+
+.positiv{
+    color: rgb(17, 112, 5);
+    font-weight: bolder;
+    
+}
+
+.negativ{
+    color: rgb(196, 9, 9);
+    font-weight: bolder;
+  
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.radious5px{
+border-radius: 5px;
+}
+
+input{
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.button1{
+    background-color:  rgb(24, 121, 100);
+    font-size: large;
+    margin-right: 0.8em;
+    margin-top: 0.5em;
+    cursor: pointer;
+    box-shadow: 0 0.3em 0.3em rgba(0, 0, 0, 0.548);
+    transition-property: box-shadow, background-color;
+    transition-duration: 0.3s;
+}
+
+.button1:hover{
+    background-color:  rgb(22, 102, 85);
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.685)
+}
+
+.button1:active{
+    background-color:  rgb(21, 87, 72);
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.801)
+}
+
+.button2{
+    background-color:  rgb(212, 44, 44);
+    font-size: large;
+    margin-right: 0.8em;
+    margin-top: 0.5em;
+    cursor: pointer;
+    box-shadow: 0 0.3em 0.3em rgba(0, 0, 0, 0.548);
+    transition-property: box-shadow, background-color;
+    transition-duration: 0.3s;
+}
+
+.button2:hover{
+    background-color:  rgb(185, 39, 39);
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.685)
+}
+
+.button2:active{
+    background-color:  rgb(160, 31, 31);
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.801)
+}
+
+
+.selectbox{
+    font-size: large;
+}
+
+.box1{
+    background-color: rgb(196, 189, 189);
+    padding: 3em;
+    border-radius: 5px;
+}

@@ -1,0 +1,9 @@
+console.log(document);
+
+function dodanoPracownika(){
+	 console.log("Pracownik dodany!");
+};
+
+function test(){
+	 console.log("TEST 1234");
+};

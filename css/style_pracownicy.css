@@ -1,0 +1,292 @@
+.btnNav{
+	background-color: rgb(5, 56, 44);
+	padding: 20px;
+	position: absolute;
+	margin-top: 40px;
+	margin-left: 20px;
+}
+
+.btnNav a{
+	text-decoration: none;
+	color: rgb(238, 230, 235);
+	background-color: rgb(5, 56, 44);
+}
+
+.btnNav:hover{
+	background-color: rgb(5, 56, 44);
+	box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.664);
+}
+
+.btnNav:active{
+	background-color: rgb(5, 56, 44);
+	box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.856);
+}
+
+nav{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	overflow: visible;
+}
+
+.editionbarNAV{
+	display: inline-block;
+}
+
+.navbar2 .editionbarNAV{
+	width: 100%;
+}
+
+.wrapperNAV{
+	position: relative;
+	width: 100%;
+}
+
+
+.wrapperNAV a{
+	width: 100%;
+}
+
+.wrapperNAV ul{
+	text-align: center;
+	position: absolute;
+	background-color: rgb(5, 56, 44);
+	padding: 0;
+	list-style-type: none;
+	box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.801);
+	margin-top: 0.4px;
+	border-radius: 10px;
+	width: 100%;
+	display: none;
+}
+
+.wrapperNAV ul li{
+	height: 100%;
+	width: 95%;
+}
+
+.wrapperNAV ul li a{
+	width: 95%;
+	height: 100%;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+	padding: 10px;
+	margin-left: 10px;
+}
+
+.wrapperNAV ul li:hover{
+	width: 95%;
+    color: rgb(190, 184, 184);
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.801);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.wrapperNAV a:focus + ul,		/* gdy użytkownik ma focus (najedzie) na el. to style aplikują się do el. ul*/
+.wrapperNAV a:hover + ul,		/* działa j.w. również po najechaniu (nie trzeba klikać) */
+.wrapperNAV ul:hover{		/* gdy się rozwinie chcemy by zostało w miejscu a nie się odrazu chowało */
+	display: block;
+}
+
+#ulBigger{
+	min-width: 150%;
+}
+
+#ulToHide{
+	position: absolute;
+	margin-top: -0.2px;
+	display: none;
+	list-style-type: none;
+	background-color: rgb(5, 56, 44);
+	border-radius: 10px;
+	padding-inline-start: 0;
+	padding: 0 10px 10px 10px;
+}
+
+#ulToHide li{
+	background-color: rgb(5, 56, 44);
+	border-radius: 10px;
+	width: 100%;
+	padding-top: 20px;
+}
+
+#ulToHide li a{
+	text-decoration: none;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	border-radius: 5px;
+}
+
+.secondSt{
+	z-index: 5;
+	position: relative;
+	margin-left: 80px;
+}
+
+#ulSmallHide1{
+	padding: 0 20px 20px 20px;
+	background-color: rgb(9, 70, 55);
+	width: 140px;
+}
+
+#ulSmallHide1 li, #ulSmallHide1 li a{
+	background-color: rgb(9, 70, 55);
+}
+
+#ulSmallHide2{
+	padding: 0 20px 20px 20px;
+	background-color: rgb(9, 70, 55);
+	width: 140px;
+}
+
+#ulSmallHide2 li, #ulSmallHide2 li a{
+	background-color: rgb(9, 70, 55);
+}
+
+.secondSt li{
+	width: 100%;
+	background-color: rgb(9, 70, 55);
+}
+
+.wrapperNAVsmall a{
+	color: rgb(238, 230, 235);
+	text-decoration: none;
+	width: 100%;
+	background-color: rgb(5, 56, 44);
+	padding: 15px 20px 15px 20px;
+	border-radius: 10px;
+}
+
+
+
+
+/* Nawigacje małe */
+
+.editionbar {
+	background: #88BB88;
+	border-radius: 5px;
+	min-width: 100px;
+}
+
+.editionbar a {
+	margin: 1px;
+	text-decoration:none;
+
+}
+
+.wrapper{
+	position: relative;
+	width: 100%;
+}
+
+
+
+.wrapper a{
+	width: 100%;
+}
+
+
+
+input{
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.wrapper ul{
+	text-align: center;
+	position: absolute;
+	background: #AAB76B;
+	padding: 0;
+	list-style-type: none;
+	box-shadow: 0 0 7px 0 rgba(0,0,0,10);
+	margin-top: 0.4px;
+	border-radius: 10px;
+	display: none;			/* ukrywam menu by było niwidoczne */
+}
+
+.wrapper ul{
+	z-index: 3;
+}
+
+.wrapper li{
+	z-index: 1;
+	padding: 1px;
+}
+
+
+/* link działa po najechaniu na cały przycisk, a nie tylko po najechaniu na napis */
+.wrapper ul li a{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+
+/* zmiana koloru tła po najechaniu */
+.wrapper ul li:hover{
+	background: #889549;
+	border-radius: 10px;
+}
+
+.wrapper a:hover{
+	background: #447744;
+	border-radius: 5px;
+}
+
+.wrapper a:focus + ul,		/* gdy użytkownik ma focus (najedzie) na el. to style aplikują się do el. ul*/
+.wrapper a:hover + ul,		/* działa j.w. również po najechaniu (nie trzeba klikać) */
+.wrapper ul:hover{		/* gdy się rozwinie chcemy by zostało w miejscu a nie się odrazu chowało */
+	display: block;
+}
+
+.btnedit{
+	background: #AAB76B;
+	width: 100px;
+	height:2em;
+	border-radius: 5px;
+	border: none;
+}
+
+.btnedit:hover{
+	background: #889549;
+	border-radius: 5px;
+	
+}
+
+
+/* all others */
+
+.button1:hover{
+	box-shadow: 0 0.8em 0.8em rgba(0, 0, 0, 0.664);
+}
+
+.button1:active{
+	box-shadow: 0 0.8em 0.8em rgba(0, 0, 0, 0.877);
+}
+
+.text_hidden{
+	display: none;
+}
+
+a{
+	color: black;
+}
+
+body{
+	margin:0;
+}
+
+.container{
+	margin:0;
+}
+
+.input_szukaj{
+	font-size: large;
+}

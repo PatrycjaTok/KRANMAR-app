@@ -1,0 +1,27 @@
+console.log(document);
+
+const table=document.querySelector('table');
+const tableTr=Array.from(table.querySelectorAll('tr'));
+const tableTdCo=Array.from(document.querySelectorAll(".umowa"));
+
+for(var i=0; i<tableTr.length; i++){
+    if(i%2==0){
+        tableTr[i].classList.add('tabbgcolordark');
+    }else{
+        tableTr[i].classList.add('tabbgcolorlight');
+    };
+};
+
+for(var i=0; i<tableTdCo.length; i++){
+    if(tableTdCo[i].innerHTML=="1/2 etatu"){
+        tableTdCo[i].classList.add('bgpolowa');
+    }else if(tableTdCo[i].innerHTML=="3/4 etatu"){
+        tableTdCo[i].classList.add('bgtrzyczw');
+    }else if(tableTdCo[i].innerHTML=="pełny etat"){
+        tableTdCo[i].classList.add('bgpelny');
+    }else if(tableTdCo[i].innerHTML=="zlecenie"){
+        tableTdCo[i].classList.add('bgzlecenie');
+    }else if(tableTdCo[i].innerHTML=="B2B"){
+        tableTdCo[i].classList.add('bgB2B');
+    };
+};

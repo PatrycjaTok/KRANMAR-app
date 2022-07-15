@@ -1,0 +1,176 @@
+<?php
+
+	session_start(); // dzięki temu podstrona może korzystać ze zmiennych globalnych
+	
+	if(!isset($_SESSION['zalogowany']))	//by uniknąć że ktoś niezalogowany wpisze kod w adresie i przejdzie na tą stronę
+	{
+		header('Location: index.php');
+		exit();			// w takim przypadku przenieś na str main (zalogowaną) i pomiń poniższy kod (z tej str index)
+	}
+	
+	
+	
+	require_once "connect.php";
+
+    $polaczenie=@new mysqli($host, $db_user, $db_password, $db_name);
+
+	if($polaczenie->connect_errno!=0)
+	{
+		echo "Error: ".$polaczenie->connect.errno;
+	}
+	else
+	{
+		$id_uzytkownika=$_SESSION['id_uzytkownika'];
+		$sql1="SELECT pracownicy.id, pracownicy.imie, pracownicy.nazwisko, pracownicy.umowa, pracownicy.okrUmowy, pracownicy.lekarskie, pracownicy.budowa, pracownicy.stawka FROM pracownicy WHERE id_uzytkownika='$id_uzytkownika'";
+		if($rezult=@$polaczenie->query($sql1))						
+		{
+			$ilu_userow=$rezult->num_rows;	//co jesli udalo sie wyslac zapytanie, ale jest bledny login/haslo
+															
+			
+		}else { echo "BRAK DANYCH";}
+
+		$polaczenie->close();
+	}
+	
+	?>
+
+<!DOCTYPE HTML>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale-=1">
+    <link rel="stylesheet" href="css/style_pracownicy.css" type="text/css">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <title>Aplikacja do zarządzania ludźmi - pracownicy</title>
+	</head>
+<body>
+    <div class="container">
+		<div class="navbar">
+			<nav> 
+			<a href="zastepstwa.php">ZASTĘPSTWA</a>
+			<a href="pracownicy.php">PRACOWNICY</a>
+			<a href="historiaZastepst.php">HISTORIA ZASTĘPST</a>					
+			</nav
+		</div>
+		
+		
+		<div class=box1>
+			
+		   <div class="boxpracownicy">
+		   <br>
+		   
+		   <?php
+				if(isset($_SESSION['dodanoPrKomunikat']))
+				{
+					echo '<div class="positiv">'.$_SESSION['dodanoPrKomunikat'].'</div>';
+					unset($_SESSION['dodanoPrKomunikat']);			//usuwam błąd, by po spełnieniu warunku nadal się nie pokazywał
+				}
+				
+				if(isset($_SESSION['usunietoPrKomunikat']))
+				{
+					echo '<div class="positiv">'.$_SESSION['usunietoPrKomunikat'].'</div>';
+					unset($_SESSION['usunietoPrKomunikat']);			//usuwam błąd, by po spełnieniu warunku nadal się nie pokazywał
+				}
+				
+				if(isset($_SESSION['edytowanoPracownika']))
+				{
+					echo '<div class="positiv">'.$_SESSION['edytowanoPracownika'].'</div>';
+					unset($_SESSION['edytowanoPracownika']);			//usuwam błąd, by po spełnieniu warunku nadal się nie pokazywał
+				}
+				
+			
+				?>
+				
+				<br>
+				
+				<div id="znalWyniki">
+				
+				<?php
+				echo "Ilość pracowników: $ilu_userow";
+					
+				?>
+				
+				</div>
+				<br> 
+				<table>
+					<thead>
+					<tr>
+						<th>nr</th>
+						<th>imie</th>
+						<th>nazwisko</th>
+						<th>rodzaj umowy</th>
+						<th>okres umowy</th>
+						<th>okres badań lekarskich</th>
+						<th>domyślna budowa</th>
+						<th>stawka</th>
+					</tr>
+					</thead>
+					<tbody id="tableData">
+					
+					<?php
+						$nr= 0;
+						while($row=$rezult->fetch_assoc())
+						{
+							$nr++;	
+							$id_pracownika=$row['id'];
+																															
+							echo "<tr>
+							<td>".$nr."</td>
+							<td>".$row['imie']."</td>
+							<td>".$row['nazwisko']."</td>
+							<td>".$row['umowa']."</td>
+							<td>".$row['okrUmowy']."</td>
+							<td>".$row['lekarskie']."</td>
+							<td>".$row['budowa']."</td>
+							<td>".$row['stawka']."</td>
+							<td> 
+							<div class='editionbar'>
+								<div class='wrapper'> 
+								<a href='#'> opcje </a>
+									<ul>
+										<li><form action='edytujPracownika.php' method='post'><input type='hidden' value=".$id_pracownika." name='inputIdPracownika'><input type ='submit' name='edytujPracownika' value='edytuj'></form></li>
+										<li><form action='deletePracownika.php' method='post'><input type='hidden' value=".$id_pracownika." name='inputIdPracownika'><input type ='submit' name='deletePracownika' value='usuń'></form></li>
+									</ul>
+								</div>
+							</div>
+							</td>
+							</tr>"; 
+																	
+						};		
+									
+					?>
+						
+					</tbody>
+				</table>
+				
+								
+		   </div>
+		  <a href="dodajPracownika.php"><button class='button1'> dodaj pracownika </button></a>
+		  	   
+	   </div>
+	   
+		
+	   <div class="logout">
+	   
+	   <?php
+	   echo '<p>[<a href="logout.php">wyloguj</a>]</p>';		//logout
+	   
+	   ?>
+	   
+	   </div>
+   
+   
+    </div>
+   
+   
+   
+   
+   <script type="text/javascript">	
+	
+		console.log("działam");
+			
+	</script>
+    </body>
+
+
+</html>

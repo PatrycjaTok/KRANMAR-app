@@ -1,0 +1,72 @@
+<?php
+
+	session_start(); // dzięki temu podstrona może korzystać ze zmiennych globalnych
+	
+	if(!isset($_SESSION['zalogowany']))	//by uniknąć że ktoś niezalogowany wpisze kod w adresie i przejdzie na tą stronę
+	{
+		header('Location: index.php');
+		exit();			// w takim przypadku przenieś na str main (zalogowaną) i pomiń poniższy kod (z tej str index)
+	}
+	
+	?>
+
+<!DOCTYPE HTML>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale-=1">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <title>Aplikacja do zarządzania ludźmi - zastępstwa, zaliczki, budowy</title>
+	</head>
+<body>
+    <div class="container">
+		<div class="navbar">
+			<nav> 
+			<a href="zastepstwa.php">ZASTĘPSTWA</a>
+			<a href="pracownicy.php">PRACOWNICY</a>
+			<a href="kontrahenci.php">PRACOWNICY</a>
+			<a href="historiaZastepst.php">HISTORIA ZASTĘPST</a>					
+			</nav
+		</div>
+		
+		
+		<div class=box1>
+			<div class="powitanie">
+		   
+			   <?php
+			   echo "<p> Witaj ".$_SESSION['name']."!";					//powitanie
+			   ?>
+			   
+		   </div>
+		   
+		   <div class="boxzastepstw">
+				<table>
+					<tr>
+						<th></th>
+						<td></td>
+					</tr>
+				</table>
+		   </div>
+	   
+	   </div>
+	    
+		
+	   <div class="logout">
+	   
+	   <?php
+	   echo '<p>[<a href="logout.php">wyloguj</a>]</p>';		//logout
+	   
+	   ?>
+	   
+	   </div>
+   
+   
+    </div>
+    
+    <!-- <script src=".js"></script> -->
+    <!--w JS: console.log(document);-->
+    </body>
+
+
+</html>

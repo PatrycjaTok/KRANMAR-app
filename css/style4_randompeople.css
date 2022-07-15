@@ -1,0 +1,344 @@
+@media screen and (max-width:640px){   
+    body{
+        font-size: 16px;
+    }  
+
+    .button1segr{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(206, 138, 50);
+        border:none;
+        cursor: pointer;
+        font-size: 0.9em;
+        font-weight: bolder;
+        border-radius: 5px;
+        transition-property: box-shadow;
+        transition-duration: 0.3s;
+
+    }
+
+    .box1{
+        width: 91vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .navbar1{
+        display: none;
+    }
+
+    .navbar2{
+        width: 90%;
+        height: 50px;
+        display: flex;
+        justify-content: left;
+        align-items: flex-end;
+    }
+
+    
+}
+
+@media screen and (min-width:640px) and (max-width:1024px){
+    body{
+        font-size: 18px;
+    }
+
+    .button1segr{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(206, 138, 50);
+        border:none;
+        cursor: pointer;
+        font-size: 0.9em;
+        font-weight: bolder;
+        border-radius: 5px;
+        ransition-property: box-shadow;
+        transition-duration: 0.3s;
+    }
+
+    .box1{
+        width: 95vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    
+    .navbar1{
+        display: none;
+    }
+    
+    .navbar2{
+        width: 90%;
+        height: 50px;
+        display: flex;
+        justify-content: left;
+        align-items: flex-end;
+        color: rgb(238, 230, 235);
+    }
+    
+}
+
+@media screen and (min-width:1024px){
+body{
+    font-size: 20px;
+    }
+
+    .button1segr{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(206, 138, 50);
+        border:none;
+        cursor: pointer;
+        font-size: 0.9em;
+        font-weight: bolder;
+        border-radius: 5px;
+        ransition-property: box-shadow;
+        transition-duration: 0.3s;
+
+    }
+
+    .box1{
+        max-width: 1800px;
+        max-width: 98vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .navbar1{
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        width: 100%;
+        background-color: rgb(6, 68, 54);
+    }
+    
+    .navbar1 a:visited{
+        color: rgb(238, 230, 235);
+    }
+    
+    .navbar1 a:hover{
+        font-size: larger;
+        color: rgb(187, 183, 183);
+    }
+    
+    .navbar1 a:active{
+        color: rgb(197, 193, 193);
+        font-size: larger;
+    }
+    
+    .navbar2{
+        display: none;
+    }
+
+}
+
+nav{
+    width: 100%;
+    text-align: right;
+}
+
+
+.navbar1 a{
+    text-decoration: none;
+    margin-right: 35px;
+    margin-left: 10px;
+    color: rgb(238, 230, 230);
+    transition-property: color, font-size;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+}
+
+.button1segr:hover{
+    box-shadow: 0 0.35em 0.55em rgba(0, 0, 0, 0.548);
+}
+
+
+body{
+    width: auto;
+    background-color: rgb(248, 243, 243);
+    font-family: georgia,tahoma, arial, sans-serif;
+    margin:0;
+}
+
+.container{
+    width:auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+}
+
+.comm{
+    height: 25px;
+}
+
+.divTable{
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10vh;
+    max-height: 3500px;
+}
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
+}
+
+th{
+    background-color: rgb(206, 138, 50);
+    color: rgb(0, 0, 0);
+
+}
+
+.tabbgcolordark{
+    background-color: rgb(206, 200, 200);
+}
+
+.tabbgcolorlight{
+    background-color: rgb(230, 222, 222);
+}
+
+.positiv{
+    color: rgb(17, 112, 5);
+    font-weight: bolder;
+    margin-left: 50px;
+}
+
+.negativ{
+    color: rgb(196, 9, 9);
+    font-weight: bolder;
+    margin-left: 50px;
+}
+
+.positiv2{
+    color: rgb(17, 112, 5);
+    font-weight: bolder;
+    margin-left: 30px;
+}
+
+.negativ2{
+    color: rgb(196, 9, 9);
+    font-weight: bolder;
+    margin-left: 30px;
+}
+
+.logout{
+    margin-top: 60px;
+    display: flex;
+    justify-content: right;
+}
+
+.btnLogOut{
+    width: 6em;
+    height: 2em;
+    border-radius: 10px;
+    background-color: rgb(24, 121, 100);
+    box-shadow: 0 0.35em 0.5em rgba(0, 0, 0, 0.664);
+    cursor: pointer;
+    transition-property: box-shadow;
+    transition-duration: 0.3s;
+    font-size: 0.9em;
+}
+
+.btnLogOut:hover{
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.664);
+}
+
+.btnLogOut:active{
+    box-shadow: 0 1em 1em rgba(0, 0, 0, 0.664);
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.radious5px{
+border-radius: 5px;
+}
+
+.divAll{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.boxpracownicy{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.boxTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.boxTitle p{
+    font-weight: bold;
+    font-size: larger;
+}
+
+.positionAndComunicat{
+    display: flex;
+    flex-direction: column;
+}
+
+.button1{
+    background: linear-gradient(rgb(104, 190, 157), rgb(247, 206, 152));
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.664);
+    font-size: 0.9em;
+    width: 6em;
+    margin-bottom: 1vh;
+}
+
+#th1, #th2{
+    min-width: 170px;
+}
+
+
+.btnzobacz{
+    background-color: rgba(21, 24, 23, 0);
+       width: 100%;
+       height: 100%;
+       border: none;
+       font-size: large;
+       border-radius: 5px;
+       transition-property: box-shadow;
+       transition-duration: 0.25s;
+   }
+   
+   .btnzobacz:hover{
+       box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.664);
+   }
+   
+   #currentLink{
+    font-size: larger;
+    color: rgb(190, 184, 184);
+    cursor: default;
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.801);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+input{
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.formargin{
+    height:75px;
+}

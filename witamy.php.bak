@@ -1,0 +1,45 @@
+<?php
+
+	session_start();	// dzięki temu podstrona może korzystać ze zmiennych globalnych
+
+	if(!isset($_SESSION['registry_ok']))
+	{
+		header('Location: index.php');
+		exit();			// w takim przypadku przenieś na str main (zalogowaną) i pomiń poniższy kod (z tej str index)
+	}else{
+		unset($_SESSION['registry_ok']);
+	}
+
+	//usuwamy zmienne służące do zapamiętywania wartości w przypadku złej rejestracji (DODATKOWE UDZIWNIENIE)
+	if(isset($_SESSION['form_name'])) unset($_SESSION['form_name']);
+	if(isset($_SESSION['form_email'])) unset($_SESSION['form_email']);
+	if(isset($_SESSION['form_password1'])) unset($_SESSION['form_password1']);
+	if(isset($_SESSION['form_password2'])) unset($_SESSION['form_password2']);
+	
+
+?>
+
+<!DOCTYPE HTML>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale-=1">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <title>Aplikacja do zarządzania ludźmi - zastępstwa, zaliczki, budowy</title>
+    </head>
+<body>
+    <div class="container">
+		<div id="gratujacje"> Dziękujemy za rejestrację! 
+		<br> Możesz zalogować się do swojego konta.
+		<br> <a href="index.php">Przejdź na stronę logowania</a>
+
+		</div>
+    </div>
+    
+    <script src=".js"></script>
+    <!--w JS: console.log(document);-->
+    </body>
+
+
+</html>

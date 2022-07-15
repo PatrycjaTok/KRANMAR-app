@@ -1,0 +1,176 @@
+@media screen and (max-width:640px){   
+    body{
+        font-size: 18px;
+    }  
+    
+    .container{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (min-width:640px) and (max-width:1024px){
+    body{
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (min-width:1024px){
+body{
+    font-size: 20px;
+    }
+
+}
+
+body{
+    width: auto;
+    background-color: rgb(187, 207, 203);
+    font-family: georgia,tahoma, arial, sans-serif;
+    margin:0;
+    padding:0;
+}
+
+.container{
+    width:auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+    }
+
+
+#powitanie p{
+    font-weight: bold;
+    font-size: larger;
+}
+
+.positiv{
+    color: rgb(17, 112, 5);
+    font-weight: bolder;
+    margin-left: 50px;
+}
+
+.negativ{
+    color: rgb(196, 9, 9);
+    font-weight: bolder;
+    margin-left: 50px;
+}
+
+
+.positionAndComunicat{
+    height: 30px;
+}
+
+input{
+    border-radius: 6px;
+    font-size: 0.8em;
+}
+
+.button2{
+    background: linear-gradient(rgb(142, 211, 196), rgb(20, 161, 131));
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.664);
+    font-size: 0.9em;
+}
+
+.btndodaj{
+    font-size: 0.8em;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0.4em 0.4em rgba(15, 15, 15, 0.534);
+    transition-property: background-color, box-shadow;
+    transition-duration: 0.3s;
+}
+
+.btndodaj:hover{
+    background-color: rgb(191, 199, 194);
+    box-shadow: 0 0.6em 0.6em rgba(15, 15, 15, 0.644);
+}
+
+.btndodaj:active{
+    background-color: rgb(155, 160, 156);
+    box-shadow: 0 0.6em 0.6em rgba(15, 15, 15, 0.753);
+}
+
+.boxlogin{
+    background-color: rgb(43, 146, 122);
+    margin-top: 4vh;
+    padding: 10px 20px 20px 20px;
+    border-radius: 5px;
+    width: 100%;
+    border: 4px solid black;
+}
+
+.box{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14vh;
+}
+
+#zaloguj{
+    font-weight: bolder;
+}
+
+.boxremindpass{
+    width: 100%;
+    margin-top: 3vh;
+    padding: 10px;
+    text-align: center;
+}
+
+.boxremindpass a{
+    width: 100%;
+	height: 100%;
+	display: inline-block;
+    box-shadow: 0 0.5em 0.5em rgba(15, 15, 15, 0.712);
+    border-radius: 10px;
+	padding: 0;
+	margin: 0;
+    transition-property: box-shadow;
+    transition-duration: 0.2s;
+    background: linear-gradient(rgb(248, 243, 243), rgb(194, 188, 188));
+}
+
+.boxremindpass a:hover{
+    box-shadow: 0 0.6em 0.6em rgba(15, 15, 15, 0.822);
+}
+
+.boxremindpass a:active{
+    box-shadow: 0 0.8em 0.8em rgba(15, 15, 15, 0.925);
+}
+
+a{
+    text-decoration: none;
+    font-weight: bolder;
+    color: rgb(23, 126, 62);
+}
+
+a:visited{
+    text-decoration: none;
+    font-weight: bolder;
+    color: rgb(23, 126, 62);
+}
+
+a:active{
+    text-decoration: none;
+    font-weight: bolder;
+    color: rgb(23, 126, 62);
+}
+
+.input1{
+    min-width: 250px;
+    margin-left: 5px;
+}
+
+input{
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.marginbottom{
+    margin-bottom: 10vh;
+}

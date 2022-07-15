@@ -1,0 +1,51 @@
+<?php
+
+	session_start();	// dzięki temu podstrona może korzystać ze zmiennych globalnych
+
+	if((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true))	//by uniknąć że ktoś zalogowany usunie kod w adresie i przejdzie na str logowania
+	{
+		header('Location: main.php');
+		exit();			// w takim przypadku przenieś na str main (zalogowaną) i pomiń poniższy kod (z tej str index)
+	}
+	$_SESSION['resetpass']=false;
+
+?>
+
+<!DOCTYPE HTML>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale-=1">
+    <!--<link rel="stylesheet" href="css/style.css" type="text/css">-->
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <title>Aplikacja do zarządzania ludźmi - zastępstwa, zaliczki, budowy</title>
+    </head>
+<body>
+    <div class="container">
+   <div id="powitanie">Wiatmy!
+        <br> By korzystać ze strony zaloguj się. Jeżeli nie posiadasz konta dokonaj rejestracji.
+        </div>
+        <div class="boxlogin">
+            <form action="zaloguj.php" method="post"><br><br>zaloguj się
+            <br>e-mail:<input type="text" class="input1" name="loginl" placeholder="e-mail">
+            <br>password:<input type="password" class="input1" name="passwordl" placeholder="password">
+            <br><input type="submit" value="zaloguj">
+            </form>
+			<?php
+				if(isset($_SESSION['blad']))	 echo $_SESSION['blad'];
+					//jeżeli istnieje taka zmienna - to ją wyświetl(by uniknąć wyświetlania za 1-wszym logowaniem)
+			?>
+			<br> Nie pamiętasz hasła?
+			<br> <a href="reminderpass.php">odzyskaj hasło</a>
+			<br><br><br> Nie masz konta? załóż je teraz!
+			<br> <a href="rejestracja.php">Zarejestruj się</a>
+			<br>
+        </div>
+		<h1 id="test"> </h1>
+    </div>
+    
+    <!--w JS: console.log(document);-->
+    </body>
+
+
+</html>

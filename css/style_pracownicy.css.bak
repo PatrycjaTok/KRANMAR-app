@@ -1,0 +1,77 @@
+.editionbar {
+	background: #88BB88;
+	border-radius: 5px;
+}
+
+.editionbar a {
+	margin: 1px;
+	text-decoration:none;
+	padding: 1px 0.5px;
+}
+
+.wrapper{
+	position: relative;
+}
+
+.wrapper ul{
+	width: 200px;
+	text-align: center;
+	position: absolute;
+	background: #AAB76B;
+	padding: 0;
+	list-style-type: none;
+	box-shadow: 0 0 23px 0 rgba(0,0,0,1);
+	margin-top: 0.5px;
+	border-radius: 10px;
+	display: none;			/* ukrywam menu by było niwidoczne */
+}
+
+.wrapper ul li{
+	padding: 1px;
+}
+
+.wrapper ul{
+	z-index: 3;
+}
+
+.wrapper li{
+	z-index: 1;
+	padding: 1px;
+}
+
+/* link działa po najechaniu na cały przycisk, a nie tylko po najechaniu na napis */
+.wrapper ul li a{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+
+
+/* zmiana koloru tła po najechaniu */
+.wrapper ul li:hover{
+	background: #889549;
+	border-radius: 10px;
+}
+
+.wrapper a:hover{
+	background: #447744;
+	border-radius: 5px;
+}
+
+.wrapper a:focus + ul,		/* gdy użytkownik ma focus (najedzie) na el. to style aplikują się do el. ul*/
+.wrapper a:hover + ul,		/* działa j.w. również po najechaniu (nie trzeba klikać) */
+.wrapper ul:hover{		/* gdy się rozwinie chcemy by zostało w miejscu a nie się odrazu chowało */
+	display: block;
+}
+
+
+/* all others */
+.button1{
+	 background: linear-gradient(#eeeebb, #88BB88);
+}
+
+.text_hidden{
+	display: none;
+}

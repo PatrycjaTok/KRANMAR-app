@@ -1,0 +1,53 @@
+<?php
+
+	session_start(); // dzięki temu podstrona może korzystać ze zmiennych globalnych
+	
+	if(!isset($_SESSION['zalogowany']))	//by uniknąć że ktoś niezalogowany wpisze kod w adresie i przejdzie na tą stronę
+	{
+		header('Location: index.php');
+		exit();			// w takim przypadku przenieś na str main (zalogowaną) i pomiń poniższy kod (z tej str index)
+	}else
+	{
+	
+	
+	
+		//Poniżej - przetważanie naszego formularza:
+		if(isset($_POST['deleteFirmy'])){
+					$id_firmy=$_POST['inputIdFirmy'];
+										
+					//połączenie z bazą mySQL
+					require_once "connect.php";
+
+					$polaczenie=@new mysqli($host, $db_user, $db_password, $db_name);
+
+					if($polaczenie->connect_errno!=0)
+					{
+						echo "Error: ".$polaczenie->connect.errno;
+					}
+					else
+					{
+						$id_uzytkownika=$_SESSION['id_uzytkownika'];
+						$sql1="SELECT firmy.nazwa_firmy FROM firmy WHERE id_uzytkownika='$id_uzytkownika' AND id='$id_firmy'";
+						if($rezult=$polaczenie->query($sql1))						
+						{
+							$row=($rezult->fetch_assoc());
+														
+							echo "<div class='okienko'> <form action='deletePrac.php' method='post'> Czy na pewno chcesz usunąć pracownika: ".$row['imie']." ".$row['nazwisko']."? <br> <input type='hidden' name='idPracownika' value='".$id_pracownika."'> <input type='submit' name='del' value='usuń'> <input type='submit' name='anuluj' value='anuluj'></form></div>";
+											
+							/*if($delete=true){
+								$sql2="DELETE FROM pracownicy WHERE id_uzytkownika='$id_uzytkownika' AND id='$id_pracownika'";
+							}
+									
+							$delete=false;	*/	
+							
+						}else { echo "BRAK DANYCH";}
+
+						$polaczenie->close();
+					}
+																		
+					
+										
+				};
+	}
+	
+	?>

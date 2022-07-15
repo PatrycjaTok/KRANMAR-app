@@ -1,0 +1,236 @@
+@media screen and (max-width:640px){   
+    body{
+        font-size: 16px;
+    }  
+
+    .box1{
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .navbar1{
+        display: none;
+    }
+
+    .navbar2{
+        width: 90%;
+        height: 50px;
+        display: flex;
+        justify-content: left;
+        align-items: flex-end;
+    }
+
+    
+}
+
+@media screen and (min-width:640px) and (max-width:1024px){
+    body{
+        font-size: 18px;
+    }
+
+    .box1{
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .navbar1{
+        display: none;
+    }
+    
+    .navbar2{
+        width: 90%;
+        height: 50px;
+        display: flex;
+        justify-content: left;
+        align-items: flex-end;
+        color: rgb(238, 230, 235);
+    }
+    
+}
+
+@media screen and (min-width:1024px){
+    body{
+    font-size: 20px;
+    }
+
+
+    .box1{
+        width: 50vw;
+        max-width: 1800px;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .navbar1{
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        width: 100%;
+        background-color: rgb(6, 68, 54);
+    }
+    
+    .navbar1 a:visited{
+        color: rgb(238, 230, 235);
+    }
+    
+    .navbar1 a:hover{
+        font-size: larger;
+        color: rgb(187, 183, 183);
+    }
+    
+    .navbar1 a:active{
+        color: rgb(197, 193, 193);
+        font-size: larger;
+    }
+    
+    .navbar2{
+        display: none;
+    }
+
+}
+
+nav{
+    width: 100%;
+    text-align: right;
+}
+
+
+.navbar1 a{
+    text-decoration: none;
+    margin-right: 35px;
+    margin-left: 10px;
+    color: rgb(238, 230, 230);
+    transition-property: color, font-size;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+}
+
+.box1{
+    margin-top: 18px;
+    background-color: rgb(184, 175, 175);
+    padding: 2em 2em 5em 2em;
+    border-radius: 0 0 1em 1em;
+    height: 100vh;
+    border: 3px solid black;
+    box-shadow: 0 2em 2em rgba(0, 0, 0, 0.671);
+}
+
+.button1segr:hover{
+    box-shadow: 0 0.35em 0.55em rgba(0, 0, 0, 0.548);
+}
+
+
+body{
+    width: auto;
+    background-color: rgb(248, 243, 243);
+    font-family: georgia,tahoma, arial, sans-serif;
+    margin:0;
+}
+
+.container{
+    width:auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.radious5px{
+border-radius: 5px;
+}
+
+.comunicats{
+    height: 20px;
+    margin-top: 1em;
+}
+
+.boxTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.boxTitle p{
+    font-weight: bold;
+    font-size: larger;
+}
+
+.positiv{
+    color: rgb(36, 131, 36);
+    font-weight: bolder;
+}
+
+.negativ{
+    color: rgb(207, 29, 16);
+    font-weight: bolder;
+}
+
+
+.btnSettings{
+    font-size: 0.8em;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0.4em 0.4em rgba(0, 0, 0, 0.555);
+    ransition-property:background-color;
+    transition-duration: 0.3s;
+}
+
+.btnSettings:hover{
+    background-color: rgba(0, 0, 0, 0.356);
+}
+
+.btnSettings:active{
+    background-color: rgba(0, 0, 0, 0.486);
+}
+
+input{
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.textRed{
+    color:rgb(212, 21, 21);
+    font-weight: bolder;
+}
+
+.btndelete{
+    font-size: 0.8em;
+    background-color: rgb(212, 21, 21);
+    color: rgb(248, 249, 250);
+    font-weight: bolder;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0.4em 0.4em rgba(0, 0, 0, 0.555);
+    ransition-property:background-color;
+    transition-duration: 0.3s;
+}
+
+.btndelete:hover{
+    background-color: rgb(165, 26, 26);
+}
+
+.btndelete:active{
+    background-color: rgb(119, 27, 27);
+}
+
+#currentLink{
+    font-size: larger;
+    color: rgb(190, 184, 184);
+    cursor: default;
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.801);
+}
